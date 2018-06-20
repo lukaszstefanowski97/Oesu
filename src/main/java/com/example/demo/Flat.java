@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Scanner;
+
 public class Flat extends Property {
 
     private String address;
