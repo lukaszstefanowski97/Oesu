@@ -1,10 +1,10 @@
+package com.example.demo;
+
 /**
  * Created by IntelliJ IDEA
  * User: Łukasz Stefanowski
  * Date: 20/06/2018
  */
-
-package com.example.demo;
 
 import java.util.Date;
 
