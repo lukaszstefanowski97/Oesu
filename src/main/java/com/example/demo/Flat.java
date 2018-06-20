@@ -1,6 +1,10 @@
-package com.example.demo;
+/**
+ * Created by IntelliJ IDEA
+ * User: Łukasz Stefanowski
+ * Date: 20/06/2018
+ */
 
-import java.util.Scanner;
+package com.example.demo;
 
 public class Flat extends Property {
 

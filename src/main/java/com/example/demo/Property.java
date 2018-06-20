@@ -1,8 +1,12 @@
+/**
+ * Created by IntelliJ IDEA
+ * User: Łukasz Stefanowski
+ * Date: 20/06/2018
+ */
+
 package com.example.demo;
 
 import java.util.Scanner;
-
-import static java.lang.Integer.parseInt;
 
 public abstract class Property {
 
