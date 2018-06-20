@@ -35,18 +35,22 @@ public class OesuApplication {
             if (number2 == 0) {
                 listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
                         Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
+                System.out.println("Flat is added");
+
             }
 
             if (number2 == 1) {
                 listOfProperties.add(new DetachedHouse(Property.enterString(), Property.enterString(), Property.enterDouble(),
                         Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
                         Property.enterDouble(), true));
+                System.out.println("Detached House is added");
             }
 
             if (number2 == 2) {
                 listOfProperties.add(new Studio(Property.enterString(), Property.enterString(), Property.enterDouble(),
                         Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
                         true));
+                System.out.println("Studio is added");
             }
         }
 
@@ -55,6 +59,7 @@ public class OesuApplication {
         if (number == 4) {
             listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
                     .enterString(), Property.enterDouble()));
+            System.out.println("Agent is added");
         }
 
         if (number == 5) System.out.println(listOfCleaners);
@@ -62,6 +67,7 @@ public class OesuApplication {
         if (number == 6) {
             listOfCleaners.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
                     .enterString(), Property.enterDouble()));
+            System.out.println("Cleaner is added");
         }
     }
 }

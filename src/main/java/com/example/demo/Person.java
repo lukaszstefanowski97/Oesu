@@ -6,6 +6,7 @@
 
 package com.example.demo;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,8 +21,9 @@ public abstract class Person {
     public static Date enterDate() throws ParseException {
         Scanner enterDate = new Scanner(System.in);
         System.out.println("Enter date (dd/mm/yyyy: ");
-        Date value = new SimpleDateFormat("dd/MM/yyyy").parse(enterDate.toString());
-
-        return value;
+        String dateString = enterDate.next();
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = formatter.parse(dateString);
+        return date;
     }
 }
