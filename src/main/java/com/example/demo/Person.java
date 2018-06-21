@@ -30,7 +30,7 @@ public abstract class Person {
             System.out.println();
             return date;
         } catch (Exception type) {
-            System.out.println("That was not a date. Please type again:\n");
+            System.out.println("That was not a date in dd/MM/yyyy format. Please type again:\n");
             return enterDate();
         }
     }

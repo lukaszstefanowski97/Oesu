@@ -50,7 +50,7 @@ public class Menu {
             } else if (number2 == 2) {
                 Studio.addStudio((LinkedList) listOfProperties);
             } else {
-                System.out.println("There is no option under this number. Please type again.\n");
+                System.out.println("There is no option under this number. Please type again:\n");
             }
 
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
@@ -76,7 +76,7 @@ public class Menu {
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
         } else {
-            System.out.println("There is no option under this number. Please type again.\n");
+            System.out.println("There is no option under this number. Please type again:\n");
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
