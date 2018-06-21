@@ -7,7 +7,6 @@ package com.example.demo;
  */
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -17,10 +16,7 @@ public abstract class Person {
     public void printInformation() {
     }
 
-    public void printSalary() {
-    }
-
-    public static Date enterDate() throws ParseException {
+    public static Date enterDate() {
         Scanner enterDate = new Scanner(System.in);
         System.out.println("Enter date (dd/mm/yyyy: ");
         try {

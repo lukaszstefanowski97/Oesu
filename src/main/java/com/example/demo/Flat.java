@@ -18,7 +18,7 @@ public class Flat extends Property {
     private Double rent;
 
     Flat(String newAddress, String newCity, Double newArea, Integer newRoomNumber, Double newPriceTotal,
-         Double newRent){
+         Double newRent) {
 
         this.address = newAddress;
         this.city = newCity;
@@ -36,11 +36,6 @@ public class Flat extends Property {
 
     @Override
     public void printInformation() {
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(area);
-        System.out.println(roomNumber);
-        System.out.println(priceTotal);
-        System.out.println(rent + "\n");
+        System.out.println(address + "\n" + city + "\n" + area + "\n" + roomNumber + "\n" + priceTotal + "\n" + rent + "\n");
     }
 }

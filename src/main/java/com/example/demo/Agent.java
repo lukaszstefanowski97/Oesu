@@ -6,7 +6,6 @@ package com.example.demo;
  * Date: 20/06/2018
  */
 
-import java.text.ParseException;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -26,29 +25,20 @@ public class Agent extends Person {
         this.salary = newSalary;
     }
 
-    public static void addAgent(LinkedList listOfAgents) throws ParseException {
+    public static void addAgent(LinkedList listOfAgents) {
         listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
                 .enterString(), Property.enterDouble()));
-        System.out.println("Agent is added");
+        System.out.println("Agent is added\n");
     }
 
-    public static void addCleaner(LinkedList listOfCleaners) throws ParseException {
+    public static void addCleaner(LinkedList listOfCleaners) {
         listOfCleaners.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
                 .enterString(), Property.enterDouble()));
-        System.out.println("Cleaner is added");
+        System.out.println("Cleaner is added\n");
     }
 
     @Override
     public void printInformation() {
-        System.out.println(name);
-        System.out.println(surname);
-        System.out.println(dateOfBirth);
-        System.out.println(idCardNumber);
-        System.out.println(salary + "\n");
-    }
-
-    @Override
-    public void printSalary() {
-        System.out.println(salary + "\n");
+        System.out.println(name + "\n" + surname + "\n" + dateOfBirth + "\n" + idCardNumber + "\n" + salary + "\n");
     }
 }

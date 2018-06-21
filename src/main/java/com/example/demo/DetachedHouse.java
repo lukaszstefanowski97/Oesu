@@ -37,19 +37,12 @@ public class DetachedHouse extends Property {
     public static void addDetachedHouse(LinkedList listOfProperties) {
         listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
                 Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
-        System.out.println("Detached House is added");
+        System.out.println("Detached House is added\n");
     }
 
     @Override
     public void printInformation() {
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(area);
-        System.out.println(roomNumber);
-        System.out.println(priceTotal);
-        System.out.println(rent);
-        System.out.println(floorNumber);
-        System.out.println(gardenArea);
-        System.out.println(garage + "\n");
+        System.out.println(address + "\n" + city + "\n" + area + "\n" + roomNumber  + "\n" + priceTotal + "\n" + rent
+                + "\n" + floorNumber + "\n" + garage + "\n" + garage + "\n");
     }
 }

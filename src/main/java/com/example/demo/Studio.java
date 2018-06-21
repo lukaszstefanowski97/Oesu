@@ -40,13 +40,7 @@ public class Studio extends Property {
 
     @Override
     public void printInformation() {
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(area);
-        System.out.println(roomNumber);
-        System.out.println(priceTotal);
-        System.out.println(rent);
-        System.out.println(maxPerson);
-        System.out.println(media + "\n");
+        System.out.println(address + "\n" + city + "\n" + area + "\n" + roomNumber  + "\n" + priceTotal + "\n" + rent
+                + "\n" + maxPerson + "\n" + media + "\n");
     }
 }

@@ -19,13 +19,12 @@ public class Menu {
         System.out.println("[3] Information about our agents");
         System.out.println("[4] Add new agent");
         System.out.println("[5] Information about our cleaners");
-        System.out.println("[6] Add new cleaner");
+        System.out.println("[6] Add new cleaner\n");
     }
 
     public static Integer action(List<Property> listOfProperties, List<Person> listOfAgents,
                                  List<Person> listOfCleaners) throws ParseException {
         Menu.printMenu();
-        System.out.println();
         Integer number = Property.enterInteger();
 
         if (number == 0) {
