@@ -16,6 +16,7 @@ public abstract class Property {
         System.out.println("[0] Add Flat");
         System.out.println("[1] Add Detached House");
         System.out.println("[2] Studio");
+        System.out.println();
     }
 
 
@@ -23,6 +24,7 @@ public abstract class Property {
         Scanner enterString = new Scanner(System.in);
         System.out.println("Enter string: ");
         String value = enterString.next();
+        System.out.println();
 
         return value;
     }
@@ -31,6 +33,7 @@ public abstract class Property {
         Scanner enterDouble = new Scanner(System.in);
         System.out.println("Enter double: ");
         Double value = enterDouble.nextDouble();
+        System.out.println();
 
         return value;
     }
@@ -39,6 +42,7 @@ public abstract class Property {
         Scanner enterInteger = new Scanner(System.in);
         System.out.println("Enter integer: ");
         Integer value = enterInteger.nextInt();
+        System.out.println();
 
         return value;
     }

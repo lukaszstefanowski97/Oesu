@@ -6,7 +6,9 @@ package com.example.demo;
  * Date: 20/06/2018
  */
 
+import java.text.ParseException;
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Agent extends Person {
 
@@ -22,6 +24,18 @@ public class Agent extends Person {
         this.dateOfBirth = newDateOfBirth;
         this.idCardNumber = newIdCardNumber;
         this.salary = newSalary;
+    }
+
+    public static void addAgent(LinkedList listOfAgents) throws ParseException {
+        listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
+                .enterString(), Property.enterDouble()));
+        System.out.println("Agent is added");
+    }
+
+    public static void addCleaner(LinkedList listOfCleaners) throws ParseException {
+        listOfCleaners.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
+                .enterString(), Property.enterDouble()));
+        System.out.println("Cleaner is added");
     }
 
     @Override

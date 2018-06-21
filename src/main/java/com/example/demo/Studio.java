@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.LinkedList;
+
 /**
  * Created by IntelliJ IDEA
  * User: Łukasz Stefanowski
@@ -28,6 +30,12 @@ public class Studio extends Property {
         this.rent = newRent;
         this.maxPerson = newMaxPerson;
         this.media = newMedia;
+    }
+
+    public static void addStudio(LinkedList listOfProperties) {
+        listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
+                Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
+        System.out.println("Studio is added");
     }
 
     @Override

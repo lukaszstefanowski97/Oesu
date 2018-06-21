@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.LinkedList;
+
 /**
  * Created by IntelliJ IDEA
  * User: Łukasz Stefanowski
@@ -30,6 +32,12 @@ public class DetachedHouse extends Property {
         this.floorNumber = newFloorNumber;
         this.gardenArea = newGardenArea;
         this.garage = newGarage;
+    }
+
+    public static void addDetachedHouse(LinkedList listOfProperties) {
+        listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
+                Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
+        System.out.println("Detached House is added");
     }
 
     @Override

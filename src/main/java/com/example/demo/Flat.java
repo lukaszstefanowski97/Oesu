@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.LinkedList;
+
 /**
  * Created by IntelliJ IDEA
  * User: Łukasz Stefanowski
@@ -24,6 +26,12 @@ public class Flat extends Property {
         this.roomNumber = newRoomNumber;
         this.priceTotal = newPriceTotal;
         this.rent = newRent;
+    }
+
+    public static void addFlat(LinkedList listOfProperties) {
+        listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
+                Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
+        System.out.println("Flat is added");
     }
 
     @Override

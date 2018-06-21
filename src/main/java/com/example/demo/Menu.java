@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.text.ParseException;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ public class Menu {
     public static Integer action(List<Property> listOfProperties, List<Person> listOfAgents,
                                  List<Person> listOfCleaners) throws ParseException {
         Menu.printMenu();
+        System.out.println();
         Integer number = Property.enterInteger();
 
         if (number == 0) {
@@ -33,8 +35,9 @@ public class Menu {
         if (number == 1) {
             for (int i = 0; i < listOfProperties.size(); i++) {
                 listOfProperties.get(i).printInformation();
-                Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+                System.out.println();
             }
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 2) {
@@ -42,23 +45,15 @@ public class Menu {
             Integer number2 = Property.enterInteger();
 
             if (number2 == 0) {
-                listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
-                System.out.println("Flat is added");
+               Flat.addFlat((LinkedList) listOfProperties);
             }
 
             if (number2 == 1) {
-                listOfProperties.add(new DetachedHouse(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
-                        Property.enterDouble(), true));
-                System.out.println("Detached House is added");
+                DetachedHouse.addDetachedHouse((LinkedList) listOfProperties);
             }
 
             if (number2 == 2) {
-                listOfProperties.add(new Studio(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
-                        true));
-                System.out.println("Studio is added");
+                Studio.addStudio((LinkedList) listOfProperties);
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
@@ -66,28 +61,25 @@ public class Menu {
         if (number == 3) {
             for (int i = 0; i < listOfAgents.size(); i++) {
                 listOfAgents.get(i).printInformation();
-                Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+                System.out.println();
             }
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 4) {
-            listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
-                    .enterString(), Property.enterDouble()));
-            System.out.println("Agent is added");
+            Agent.addAgent((LinkedList) listOfAgents);
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 5) {
             for (int i = 0; i < listOfCleaners.size(); i++) {
                 listOfCleaners.get(i).printInformation();
-                Menu.action(listOfProperties, listOfAgents, listOfCleaners);
             }
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 6) {
-            listOfCleaners.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
-                    .enterString(), Property.enterDouble()));
-            System.out.println("Cleaner is added");
+            Agent.addCleaner((LinkedList) listOfCleaners);
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 

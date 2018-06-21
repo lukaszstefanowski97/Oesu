@@ -24,6 +24,7 @@ public abstract class Person {
         String dateString = enterDate.next();
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date = formatter.parse(dateString);
+        System.out.println();
         return date;
     }
 }
