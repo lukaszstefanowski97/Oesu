@@ -50,6 +50,6 @@ public class DetachedHouse extends Property {
         System.out.println(rent);
         System.out.println(floorNumber);
         System.out.println(gardenArea);
-        System.out.println(garage);
+        System.out.println(garage + "\n");
     }
 }

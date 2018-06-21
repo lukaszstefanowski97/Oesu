@@ -14,17 +14,24 @@ import java.util.Scanner;
 
 public abstract class Person {
 
-    public void printInformation(){}
+    public void printInformation() {
+    }
 
-    public void printSalary(){}
+    public void printSalary() {
+    }
 
     public static Date enterDate() throws ParseException {
         Scanner enterDate = new Scanner(System.in);
         System.out.println("Enter date (dd/mm/yyyy: ");
-        String dateString = enterDate.next();
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = formatter.parse(dateString);
-        System.out.println();
-        return date;
+        try {
+            String dateString = enterDate.next();
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = formatter.parse(dateString);
+            System.out.println();
+            return date;
+        } catch (Exception type) {
+            System.out.println("That was not a date. Please type again:\n");
+            return enterDate();
+        }
     }
 }

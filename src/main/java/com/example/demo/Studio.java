@@ -20,7 +20,7 @@ public class Studio extends Property {
     private Boolean media;
 
     Studio(String newAddress, String newCity, Double newArea, Integer newRoomNumber, Double newPriceTotal,
-                  Double newRent, Integer newMaxPerson, Boolean newMedia) {
+           Double newRent, Integer newMaxPerson, Boolean newMedia) {
 
         this.address = newAddress;
         this.city = newCity;
@@ -47,6 +47,6 @@ public class Studio extends Property {
         System.out.println(priceTotal);
         System.out.println(rent);
         System.out.println(maxPerson);
-        System.out.println(media);
+        System.out.println(media + "\n");
     }
 }

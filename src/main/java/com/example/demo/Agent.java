@@ -44,11 +44,11 @@ public class Agent extends Person {
         System.out.println(surname);
         System.out.println(dateOfBirth);
         System.out.println(idCardNumber);
-        System.out.println(salary);
+        System.out.println(salary + "\n");
     }
 
     @Override
     public void printSalary() {
-        System.out.println(salary);
+        System.out.println(salary + "\n");
     }
 }

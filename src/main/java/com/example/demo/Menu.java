@@ -33,8 +33,8 @@ public class Menu {
         }
 
         if (number == 1) {
-            for (int i = 0; i < listOfProperties.size(); i++) {
-                listOfProperties.get(i).printInformation();
+            for (Property listOfProperty : listOfProperties) {
+                listOfProperty.printInformation();
                 System.out.println();
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
@@ -45,22 +45,20 @@ public class Menu {
             Integer number2 = Property.enterInteger();
 
             if (number2 == 0) {
-               Flat.addFlat((LinkedList) listOfProperties);
-            }
-
-            if (number2 == 1) {
+                Flat.addFlat((LinkedList) listOfProperties);
+            } else if (number2 == 1) {
                 DetachedHouse.addDetachedHouse((LinkedList) listOfProperties);
-            }
-
-            if (number2 == 2) {
+            } else if (number2 == 2) {
                 Studio.addStudio((LinkedList) listOfProperties);
+            } else {
+                System.out.println("There is no option under this number");
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 3) {
-            for (int i = 0; i < listOfAgents.size(); i++) {
-                listOfAgents.get(i).printInformation();
+            for (Person listOfAgent : listOfAgents) {
+                listOfAgent.printInformation();
                 System.out.println();
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
@@ -72,14 +70,19 @@ public class Menu {
         }
 
         if (number == 5) {
-            for (int i = 0; i < listOfCleaners.size(); i++) {
-                listOfCleaners.get(i).printInformation();
+            for (Person listOfCleaner : listOfCleaners) {
+                listOfCleaner.printInformation();
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 
         if (number == 6) {
             Agent.addCleaner((LinkedList) listOfCleaners);
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+        }
+
+        if (number != 1 && number != 2 && number != 3 && number != 4 && number != 5 && number != 6){
+            System.out.println("There is no option under this number\n");
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
         }
 

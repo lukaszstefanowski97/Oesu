@@ -31,7 +31,7 @@ public class Flat extends Property {
     public static void addFlat(LinkedList listOfProperties) {
         listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
                 Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
-        System.out.println("Flat is added");
+        System.out.println("Flat is added\n");
     }
 
     @Override
@@ -41,6 +41,6 @@ public class Flat extends Property {
         System.out.println(area);
         System.out.println(roomNumber);
         System.out.println(priceTotal);
-        System.out.println(rent);
+        System.out.println(rent + "\n");
     }
 }
