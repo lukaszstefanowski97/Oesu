@@ -25,7 +25,7 @@ public class Agent extends Person {
     }
 
     @Override
-    public void printInformations() {
+    public void printInformation() {
         System.out.println(name);
         System.out.println(surname);
         System.out.println(dateOfBirth);

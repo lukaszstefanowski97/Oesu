@@ -9,65 +9,18 @@ package com.example.demo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.text.ParseException;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @SpringBootApplication
 public class OesuApplication {
 
     public static void main(String[] args) throws ParseException {
 
-        Menu.printMenu();
+        List<Property> listOfProperties = new LinkedList<>();
+        List<Person> listOfAgents = new LinkedList<>();
+        List<Person> listOfCleaners = new LinkedList<>();
 
-        Integer number = Property.enterInteger();
-
-        ArrayList<Property> listOfProperties = new ArrayList<>(20);
-        ArrayList<Person> listOfAgents = new ArrayList<>(20);
-        ArrayList<Person> listOfCleaners = new ArrayList<>(20);
-
-        if (number == 0) System.exit(0);
-
-        if (number == 1) System.out.println(listOfProperties);
-
-        if (number == 2) {
-            Property.addNewProperty();
-            Integer number2 = Property.enterInteger();
-
-            if (number2 == 0) {
-                listOfProperties.add(new Flat(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble()));
-                System.out.println("Flat is added");
-
-            }
-
-            if (number2 == 1) {
-                listOfProperties.add(new DetachedHouse(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
-                        Property.enterDouble(), true));
-                System.out.println("Detached House is added");
-            }
-
-            if (number2 == 2) {
-                listOfProperties.add(new Studio(Property.enterString(), Property.enterString(), Property.enterDouble(),
-                        Property.enterInteger(), Property.enterDouble(), Property.enterDouble(), Property.enterInteger(),
-                        true));
-                System.out.println("Studio is added");
-            }
-        }
-
-        if (number == 3) System.out.println(listOfAgents);
-
-        if (number == 4) {
-            listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
-                    .enterString(), Property.enterDouble()));
-            System.out.println("Agent is added");
-        }
-
-        if (number == 5) System.out.println(listOfCleaners);
-
-        if (number == 6) {
-            listOfCleaners.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
-                    .enterString(), Property.enterDouble()));
-            System.out.println("Cleaner is added");
-        }
+        Menu.action(listOfProperties, listOfAgents, listOfCleaners);
     }
 }

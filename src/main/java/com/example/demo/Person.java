@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public abstract class Person {
 
-    public void printInformations(){}
+    public void printInformation(){}
 
     public void printSalary(){}
 
