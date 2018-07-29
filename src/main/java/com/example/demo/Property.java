@@ -14,9 +14,7 @@ public abstract class Property {
     }
 
     public static void addNewProperty() {
-        System.out.println("[0] Add Flat");
-        System.out.println("[1] Add Detached House");
-        System.out.println("[2] Studio\n");
+        System.out.println("[0] Add Flat\n[1] Add Detached House\n[2] Studio\n");
     }
 
     public static String enterString() {

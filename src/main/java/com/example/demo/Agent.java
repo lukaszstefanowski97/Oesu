@@ -17,7 +17,7 @@ public class Agent extends Person {
     private String idCardNumber;
     private Double salary;
 
-    Agent(String newName, String newSurname, Date newDateOfBirth, String newIdCardNumber, Double newSalary) {
+    private Agent(String newName, String newSurname, Date newDateOfBirth, String newIdCardNumber, Double newSalary) {
         this.name = newName;
         this.surname = newSurname;
         this.dateOfBirth = newDateOfBirth;
@@ -29,6 +29,22 @@ public class Agent extends Person {
         listOfAgents.add(new Agent(Property.enterString(), Property.enterString(), Person.enterDate(), Property
                 .enterString(), Property.enterDouble()));
         System.out.println("Agent is added\n");
+    }
+
+    public static void removeItem(LinkedList listOfAgents) {
+        System.out.println("Please type an index of and item you want to remove: ");
+        int index = Property.enterInteger();
+        if (index == listOfAgents.size()) {
+            Integer maxIndex = listOfAgents.size()-1;
+            System.out.println("The maximum index equals to " + maxIndex);
+            removeItem(listOfAgents);
+        } else if (index < 0) {
+            System.out.println("Index can not be negative.\n");
+            removeItem(listOfAgents);
+        } else {
+            listOfAgents.remove(index);
+            System.out.println("Item is removed.\n");
+        }
     }
 
     public static void addCleaner(LinkedList listOfCleaners) {

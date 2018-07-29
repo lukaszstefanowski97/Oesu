@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import java.text.ParseException;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA
@@ -13,17 +11,13 @@ import java.util.List;
 public class Menu {
 
     private static void printMenu() {
-        System.out.println("[0] To close program");
-        System.out.println("[1] Information about our properties");
-        System.out.println("[2] Add new property");
-        System.out.println("[3] Information about our agents");
-        System.out.println("[4] Add new agent");
-        System.out.println("[5] Information about our cleaners");
-        System.out.println("[6] Add new cleaner\n");
+        System.out.println("[0] To close program\n[1] Information about our properties\n[2] Add new property\n[3] " +
+                "Remove property\n[4] Information about our agents\n[5] Add new agent\n[6] Remove agent\n[7] " +
+                "Information about our cleaners\n[8] Add new cleaner\n[9] Remove cleaner\n[10] Clear all");
     }
 
-    public static Integer action(List<Property> listOfProperties, List<Person> listOfAgents,
-                                 List<Person> listOfCleaners) throws ParseException {
+    public static Integer action(LinkedList<Property> listOfProperties, LinkedList<Person> listOfAgents,
+                                 LinkedList<Person> listOfCleaners) {
         Menu.printMenu();
         Integer number = Property.enterInteger();
 
@@ -43,35 +37,53 @@ public class Menu {
             Integer number2 = Property.enterInteger();
 
             if (number2 == 0) {
-                Flat.addFlat((LinkedList) listOfProperties);
+                Flat.addFlat(listOfProperties);
             } else if (number2 == 1) {
-                DetachedHouse.addDetachedHouse((LinkedList) listOfProperties);
+                DetachedHouse.addDetachedHouse(listOfProperties);
             } else if (number2 == 2) {
-                Studio.addStudio((LinkedList) listOfProperties);
+                Studio.addStudio(listOfProperties);
             } else {
                 System.out.println("There is no option under this number. Please type again:\n");
             }
-
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
         } else if (number == 3) {
+            Agent.removeItem(listOfProperties);
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+
+        } else if (number == 4) {
             for (Person listOfAgent : listOfAgents) {
                 listOfAgent.printInformation();
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
-        } else if (number == 4) {
-            Agent.addAgent((LinkedList) listOfAgents);
+        } else if (number == 5) {
+            Agent.addAgent(listOfAgents);
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
-        } else if (number == 5) {
+        } else if (number == 6) {
+            Agent.removeItem(listOfAgents);
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+
+        } else if (number == 7) {
             for (Person listOfCleaner : listOfCleaners) {
                 listOfCleaner.printInformation();
             }
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
-        } else if (number == 6) {
-            Agent.addCleaner((LinkedList) listOfCleaners);
+        } else if (number == 8) {
+            Agent.addCleaner(listOfCleaners);
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+
+        } else if (number == 9) {
+            Agent.removeItem(listOfCleaners);
+            Menu.action(listOfProperties, listOfAgents, listOfCleaners);
+
+        } else if (number == 10) {
+            listOfAgents.clear();
+            listOfCleaners.clear();
+            listOfProperties.clear();
+            System.out.println("All lists are cleared.\n");
             Menu.action(listOfProperties, listOfAgents, listOfCleaners);
 
         } else {
